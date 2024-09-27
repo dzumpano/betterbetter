@@ -6,7 +6,8 @@ if sys.platform != "win32":
     venvdir = os.path.abspath(os.path.join(os.getcwd(), 'venv\\Scripts'))
     #print(venvdir)
     subprocess.run(['pwd'])
-    subprocess.run(["./venv/Scripts/activate.sh"])
+    
+    subprocess.run([".venv\\Scripts\\activate"])
 
 import discord
 from io import BytesIO
