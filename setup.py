@@ -1,3 +1,12 @@
+import subprocess
+import sys
+import os
+    
+if sys.platform != "win32":
+    venvdir = os.path.abspath(os.path.join(os.getcwd(), 'venv\\Scripts'))
+    print(venvdir)
+    subprocess.run([". venv/Scripts/activate"])
+
 import discord
 from io import BytesIO
 import asyncio
