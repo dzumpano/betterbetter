@@ -1,13 +1,6 @@
 import subprocess
 import sys
 import os
-    
-if sys.platform != "win32":
-    venvdir = os.path.abspath(os.path.join(os.getcwd(), 'venv\\Scripts'))
-    #print(venvdir)
-    subprocess.run(['pwd'])
-    
-    subprocess.run([".venv\\Scripts\\activate"])
 
 import discord
 from io import BytesIO
@@ -66,4 +59,4 @@ class Client(discord.Client):
 
 client = Client(client=None)
 client.client = client  # Assigning the client instance to itself
-client.run("MTI4ODI5MzQ4OTg2MzQzMDIyOA.G5fcpQ.w-Q5nLWTo5ivczMK9nvd2fj7a0a_GEYSuhcsvQ")
+client.run("")
