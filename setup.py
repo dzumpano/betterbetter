@@ -55,7 +55,7 @@ class Client(discord.Client):
         print('Logged on')
 
     async def on_message(self, message):
-        for i in range(0, channel_fetch):
+        for i in range(0, len(channel_fetch)):
             if message.channel.id == channel_fetch[i]:
                 if not hasattr(message, 'embeds'):
                     return
@@ -76,7 +76,7 @@ class Client(discord.Client):
                     await self.PP_picks_channel[i].send(message.content)
 
     async def on_message_edit(self, before, after):
-        for i in range(0, channel_fetch):
+        for i in range(0, len(channel_fetch)):
             if before.channel.id == channel_fetch[i]:
                 print("edit")
                 await self.NE_picks_channel[i].send(content = after.content)
