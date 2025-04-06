@@ -61,10 +61,10 @@ class Client(discord.Client):
                     return
 
                 if len(message.attachments) > 0:
-                    for i in message.attachments:
+                    for j in message.attachments:
                         print("image")
                         # Code to convert attachment into byte data (allows you to send the image without saving it to filesystem)
-                        bytedata = await save_attachment(i)
+                        bytedata = await save_attachment(j)
                         file = discord.File(bytedata, filename="image.png")
 
                         await self.NE_picks_channel[i].send(content=message.content, file=file)
