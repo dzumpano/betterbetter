@@ -30,7 +30,7 @@ class Client(discord.Client):
         self.client = None
 
     async def on_ready(self):
-        
+
         self.picks_fetch_channel =  [
                                     await self.client.fetch_channel(channel_fetch[0]),
                                     await self.client.fetch_channel(channel_fetch[1]),
@@ -82,6 +82,12 @@ class Client(discord.Client):
                 await self.NE_picks_channel[i].send(content = after.content)
                 await self.PP_picks_channel[i].send(content = after.content)
 
-client = Client(client=None)
-client.client = client  # Assigning the client instance to itself
-client.run("")
+if __name__ == "__main__":
+    try: 
+        client = Client(client=None)
+        client.client = client
+        client.run("")
+    except asyncio.CancelledError as e:
+        print(f"Cancelled error: {e}" )
+    except Exception as e:
+        print(f"Unexpected error: {e}" )
